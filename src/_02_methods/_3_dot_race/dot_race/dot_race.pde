@@ -13,6 +13,7 @@ int x;
 
 void setup() {
     size(800, 200);
+    int x=50;
     
     //1. Set the variable named x to 50.
 }
@@ -20,7 +21,12 @@ void setup() {
 void draw() {
 
 	background(200,200,200);
- 
+  color(255,255,0);
+  ellipse(100,100,50,50);
+    if(mousePressed){
+      ellipse(x,100,50,50);
+      x=x+5;
+    }
     //2. Draw an ellipse of height and width 50. Make sure to use the x variable for its X position. 
     //   Pick a y value that places it half way down the window.
       
@@ -37,7 +43,7 @@ void draw() {
 
 }
 
-/*
+
 import ddf.minim.*;
 boolean soundPlayed = false;
 void playSound() {
