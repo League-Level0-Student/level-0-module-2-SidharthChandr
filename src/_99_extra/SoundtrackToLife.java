@@ -3,6 +3,7 @@ package _99_extra;
 
 import java.net.URI;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class SoundtrackToLife {
 
@@ -11,7 +12,16 @@ public class SoundtrackToLife {
 		// 1. Adjust this pop-up to find out what mood the user is in.
 		int userMood = JOptionPane.showOptionDialog(null, "The question", "Pop-up Title", 0,
 				JOptionPane.INFORMATION_MESSAGE, null, new String[] { "Mood1", "Mood2", "Mood3" }, null);
-		
+		System.out.println(userMood);
+		if (userMood==0){
+			playVideo("https://www.youtube.com/watch?v=LXK3sphcbAQ&ab_channel=SoothingRelaxation");
+		}
+		if (userMood==1) {
+			playVideo("https://www.youtube.com/watch?v=mmS4x331fz4&ab_channel=HappyMusic");
+		}
+		if(userMood==2) {
+			playVideo("https://www.youtube.com/watch?v=s7FTAxw37hk&ab_channel=AuroraVibes");
+		}
 		// 2. Their answer is stored in the userMood variable. Print it out.
 
 		// 3. If they are in a stressed mood, use the playVideo method to play a calming song from YouTube.

@@ -1,7 +1,9 @@
 
 package _99_extra;
 
- /* NASA wants to shoot a rocket into orbit. 
+import javax.swing.JOptionPane;
+
+/* NASA wants to shoot a rocket into orbit. 
   * Somebody has to do the countdown or the rocket won't launch.
  * 
  * The ground control chief will tell you where to start – then count down to 0. 
@@ -12,6 +14,15 @@ package _99_extra;
 
 public class NasaCountdown {
 	public static void main(String[] args) throws InterruptedException {
+		String x = JOptionPane.showInputDialog("Where would you like to start counting from?");
+		int countdown=Integer.parseInt(x);
+		for(int i=countdown;i>-1; i--) {
+			Thread.sleep(1000);
+			System.out.println(i);
+			if(i==0) {
+				speak("Blastoff!");
+			}
+		}
 		// 2. Use a pop-up to ask the user where to start counting from
 
 		// 3. Change the countdown to use the new starting point
